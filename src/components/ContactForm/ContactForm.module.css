@@ -1,0 +1,18 @@
+.inputTitle {
+  color: blueviolet;
+}
+
+.inputForm {
+  outline: 1px solid;
+  height: 300px;
+  width: 400px;
+}
+
+.inputLabel {
+  font-size: 32pxpx;
+}
+
+.inputBtn {
+  font-size: 24px;
+  background-color: #8b969605;
+}
