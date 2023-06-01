@@ -29,7 +29,6 @@ export class ContactForm extends Component {
           color: '#010101',
         }}
       >
-        <h2 className={css.inputTitle}>Phonebook</h2>
         <form className={css.inputForm} onSubmit={this.handleSubmit}>
           <label className={css.inputLabel}>
             Name

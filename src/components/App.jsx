@@ -1,5 +1,4 @@
 import { Component } from 'react';
-// import { nanoid } from 'nanoid';
 // import PropTypes from 'prop-types';
 
 import ContactForm from './ContactForm/ContactForm';
@@ -18,6 +17,10 @@ export class App extends Component {
   };
 
   handleFormSubmit = contact => {
+    // const { contacts } = this.state.contacts;
+    // contacts.find(item => item.name === 'contact.name')
+    //   ? alert(`${contact.name} is already in contacts`)
+    //   :
     this.setState(prevState => ({
       contacts: [...prevState.contacts, contact],
     }));
@@ -36,7 +39,6 @@ export class App extends Component {
   };
 
   deleteContact = contactID => {
-    console.log('contactID', contactID);
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== contactID),
     }));
@@ -56,7 +58,9 @@ export class App extends Component {
           color: '#010101',
         }}
       >
+        <h1>Phonebook</h1>
         <ContactForm onSubmitContact={this.handleFormSubmit} />
+        <h2>Contacts</h2>
         <Filter value={filter} onChange={this.changeFilter} />
         <Contacts
           contacts={filteredContacts}
