@@ -1,6 +1,4 @@
 import { Component } from 'react';
-import PropTypes from 'prop-types';
-
 import { ContactForm } from './ContactForm/ContactForm';
 import { Contacts } from './Contacts/Contacts';
 import { Filter } from './Filter/Filter';
@@ -68,9 +66,4 @@ export class App extends Component {
       </div>
     );
   }
-  // ContactForm.propTypes = {
-  // imgUrl: PropTypes.string,
-  // name: PropTypes.string.isRequired,
-  // price: PropTypes.number.isRequired,
-};
 }

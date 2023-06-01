@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import css from './Contacts.module.css';
 
 export const Contacts = ({ contacts, onDeleteContact }) => {
@@ -21,4 +22,9 @@ export const Contacts = ({ contacts, onDeleteContact }) => {
       </ul>
     </>
   );
+};
+
+Contacts.prototype = {
+  contacts: PropTypes.array,
+  onDeleteContact: PropTypes.func,
 };
