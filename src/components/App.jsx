@@ -1,7 +1,7 @@
 import { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-import ContactForm from './ContactForm/ContactForm';
+import { ContactForm } from './ContactForm/ContactForm';
 import { Contacts } from './Contacts/Contacts';
 import { Filter } from './Filter/Filter';
 
@@ -17,10 +17,9 @@ export class App extends Component {
   };
 
   handleFormSubmit = contact => {
-    // const { contacts } = this.state.contacts;
-    // contacts.find(item => item.name === 'contact.name')
-    //   ? alert(`${contact.name} is already in contacts`)
-    //   :
+    if (this.state.contacts.find(item => item.name === contact.name)) {
+      alert(`${contact.name} is already in contacts`);
+    }
     this.setState(prevState => ({
       contacts: [...prevState.contacts, contact],
     }));
@@ -69,4 +68,9 @@ export class App extends Component {
       </div>
     );
   }
+  // ContactForm.propTypes = {
+  // imgUrl: PropTypes.string,
+  // name: PropTypes.string.isRequired,
+  // price: PropTypes.number.isRequired,
+};
 }
