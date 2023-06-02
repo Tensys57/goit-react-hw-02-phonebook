@@ -4,16 +4,16 @@ import { nanoid } from 'nanoid';
 import css from './ContactForm.module.css';
 
 export class ContactForm extends Component {
-  state = { name: '', number: '', id: '' };
+  state = { name: '', number: '' };
 
   handleChange = ev => {
     const { name, value } = ev.currentTarget;
-    this.setState({ id: nanoid(), [name]: value });
+    this.setState({ [name]: value });
   };
 
   handleSubmit = ev => {
     ev.preventDefault();
-    this.props.onSubmitContact(this.state);
+    this.props.onSubmitContact({ ...this.state, id: nanoid() });
     this.reset();
   };
 
